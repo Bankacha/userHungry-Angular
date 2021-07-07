@@ -1,0 +1,22 @@
+<div class="tableDiv">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Label</th>
+        <th scope="col">is active?</th>
+        <th scope="col">Created</th>
+        <th class="text-center">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let poll of polls; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{poll.label}}</td>
+        <td>{{poll.active ? 'yes' : 'no'}}</td>
+        <td>{{poll.created | date}}</td>
+        <td class="text-center"><button>del</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

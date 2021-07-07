@@ -1,0 +1,21 @@
+$primary-color: #4E4E4E;
+
+.home {
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+
+    h1 {
+        text-align: center;
+        margin-top: 40px;
+        color: $primary-color;
+    }
+
+    p {
+        margin-top: 7%;
+        text-align: center;
+        padding: 0 35%;
+        color: $primary-color;
+    }
+}
+    

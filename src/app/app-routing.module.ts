@@ -1,10 +1,15 @@
-import { UsersComponent } from './components/users/users.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PollsComponent } from './components/polls/polls.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 const routes: Routes = [
+  {
+    path: 'auth',
+    component: LogInComponent
+  },
   {
     path: '',
     component: LayoutComponent,
@@ -14,8 +19,8 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: 'users',
-        component: UsersComponent,
+        path: 'polls',
+        component: PollsComponent,
       }
     ]
   },
