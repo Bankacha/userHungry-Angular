@@ -1,12 +1,12 @@
 <div class="tableDiv">
-  <table class="table">
+  <button routerLink='/create'>Create new poll</button>
+  <table class="table table-sm table-bordered border-success">
     <thead>
       <tr>
         <th scope="col">No.</th>
         <th scope="col">Label</th>
         <th scope="col">is active?</th>
         <th scope="col">Created</th>
-        <th class="text-center">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +15,6 @@
         <td>{{poll.label}}</td>
         <td>{{poll.active ? 'yes' : 'no'}}</td>
         <td>{{poll.created | date}}</td>
-        <td class="text-center"><button>del</button></td>
       </tr>
     </tbody>
   </table>

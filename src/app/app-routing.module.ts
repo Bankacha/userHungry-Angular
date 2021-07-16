@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PollsComponent } from './components/polls/polls.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { CreateNewPollComponent } from './components/create-new-poll/create-new-poll.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'polls',
         component: PollsComponent,
+      },
+      {
+        path: 'create',
+        component: CreateNewPollComponent
       }
     ]
   },

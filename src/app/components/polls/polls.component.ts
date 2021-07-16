@@ -18,5 +18,4 @@ export class PollsComponent implements OnInit {
       console.log(this.polls)
     } )
   }
-
 }

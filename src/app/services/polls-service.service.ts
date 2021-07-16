@@ -12,4 +12,12 @@ export class PollsService {
   getPolls() {
     return this.http.get(`${baseURL}/polls`, { headers: getAuthHeaders() })
   }
+
+  createPoll(label: string, restaurants: string[]) {
+    const body = {
+      'label': label,
+      'restaurants': restaurants
+    }
+    return this.http.post(`${baseURL}/polls`, body, { headers: getAuthHeaders() })
+  }
 }

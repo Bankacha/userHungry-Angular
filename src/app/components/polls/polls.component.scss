@@ -1,12 +1,13 @@
 .tableDiv {
-    padding: 2%;
+    padding: 2% 10%;
     height: 94vh;
     overflow-y: auto;
 
     button {
-        border-radius: 50%;
-        height: 35px;
-        background-color: #F67280;
+        width: 100%;
+        border-radius: 10px;
         border: none;
+        margin-bottom: 10px;
+        background-color: #F67280;
     }
 }

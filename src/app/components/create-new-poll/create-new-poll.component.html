@@ -1,0 +1,29 @@
+<div>
+    <div *ngIf='setWarning' class="alert alert-warning alerto text-center alert-dismissible fade show" role="alert">
+        Please, insert poll label!
+        <button (click)='setWarning = false' type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="text-center">
+        <input [(ngModel)]='pollLabel' type="text" placeholder="Insert poll label">
+    </div>
+    <div class="row-sm-12 restaurants">
+        <div class='col-sm-3'>
+            <p *ngFor='let restaurant of restaurants' (click)='addToChosen(restaurant.id)'>{{restaurant.name}}</p>
+        </div>
+
+        <div class='col-sm-2 text-center'>
+            <h6>Click on as many cards as you wish to insert them into the vote :)</h6>
+
+
+            <button *ngIf='chosenRestaurants.length' (click)='createNewPoll()'><strong>Create poll</strong></button>
+        </div>
+
+        <div class='col-sm-3'>
+            <p *ngFor='let restaurant of chosenRestaurants' (click)='removeFromChosen(restaurant.id)'>
+                {{restaurant.name}}
+            </p>
+        </div>
+    </div>
+
+</div>

@@ -12,6 +12,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { CommonModule } from '@angular/common';
+import { CreateNewPollComponent } from './components/create-new-poll/create-new-poll.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     PollsComponent,
     LogInComponent,
+    CreateNewPollComponent,
   ],
   imports: [
     BrowserModule,
