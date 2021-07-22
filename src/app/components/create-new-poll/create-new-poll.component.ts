@@ -1,5 +1,5 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PollsService } from 'src/app/services/polls-service.service';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
 
@@ -20,7 +20,8 @@ export class CreateNewPollComponent implements OnInit {
 
   constructor(
     private restaurantsService: RestaurantsService,
-    private pollsService: PollsService
+    private pollsService: PollsService,
+    private router: Router
   ) { }
 
   ngOnInit(): any {
@@ -30,17 +31,15 @@ export class CreateNewPollComponent implements OnInit {
     })
   }
 
-  moveRestaurant(id: string, from: any, to: any) {
-    from.forEach((item: any) => item?.id === id ? to?.push(item) : '')
+  notExistsInChosen(id: string) {
+    return !this.chosenRestaurants.find(item => item.id === id)
   }
 
-  addToChosen(id: string) {
-    this.moveRestaurant(id, this.restaurants, this.chosenRestaurants)
-    this.restaurants = this.restaurants.filter(item => item.id !== id)
+  addToChosen(restaurant: any) {
+    this.chosenRestaurants.push(restaurant)
   }
 
   removeFromChosen(id: string) {
-    this.moveRestaurant(id, this.chosenRestaurants, this.restaurants)
     this.chosenRestaurants = this.chosenRestaurants.filter(item => item.id !== id)
   }
 
@@ -51,6 +50,8 @@ export class CreateNewPollComponent implements OnInit {
       this.pollsService.createPoll(this.pollLabel, idList).subscribe(data => {
         console.log(data)
         this.chosenRestaurants = [];
+        this.pollLabel = '';
+        this.router.navigate(['polls'])
       })
     } else {
       this.setWarning = true;

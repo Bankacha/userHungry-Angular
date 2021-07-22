@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { CommonModule } from '@angular/common';
 import { CreateNewPollComponent } from './components/create-new-poll/create-new-poll.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { CreateNewPollComponent } from './components/create-new-poll/create-new-
     PollsComponent,
     LogInComponent,
     CreateNewPollComponent,
+    RestaurantsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
   ],
   providers: [PollsService, AuthService],
   bootstrap: [AppComponent]

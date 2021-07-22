@@ -9,7 +9,9 @@
     </div>
     <div class="row-sm-12 restaurants">
         <div class='col-sm-3'>
-            <p *ngFor='let restaurant of restaurants' (click)='addToChosen(restaurant.id)'>{{restaurant.name}}</p>
+            <ng-container *ngFor='let restaurant of restaurants'>
+                <p *ngIf='notExistsInChosen(restaurant.id)' (click)='addToChosen(restaurant)'>{{restaurant.name}}</p>
+            </ng-container>
         </div>
 
         <div class='col-sm-2 text-center'>
