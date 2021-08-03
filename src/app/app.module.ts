@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { CreateNewPollComponent } from './components/create-new-poll/create-new-poll.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [PollsService, AuthService],
   bootstrap: [AppComponent]

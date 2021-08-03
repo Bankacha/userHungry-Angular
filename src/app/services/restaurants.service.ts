@@ -12,4 +12,8 @@ export class RestaurantsService {
   getRestaurants() {
     return this.http.get(`${baseURL}/restaurants`, {headers: getAuthHeaders()})
   }
+
+  deleteRestaurant(id: string) {
+    return this.http.delete(`${baseURL}/restaurants/${id}`, {headers: getAuthHeaders()})
+  }
 }

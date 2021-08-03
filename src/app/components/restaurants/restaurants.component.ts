@@ -18,4 +18,9 @@ export class RestaurantsComponent implements OnInit {
     })
   }
 
+  deleteRestaurant(id: string) {
+    this.restaurantService.deleteRestaurant(id).subscribe((data:any) => {
+      // this.restaurants.filter(item => item.id === id)      ??????? kako refreshovati restorane?
+    })
+  }
 }

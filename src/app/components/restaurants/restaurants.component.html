@@ -2,15 +2,15 @@
     <div>
 
     </div>
-    <div>
-        <table class="table table-sm">
+    <div class="tableDiv">
+        <table class="table table-sm table-bordered border-success">
             <thead>
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Name</th>
                     <th scope="col">Address</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col" class="text-center">Edit</th>
+                    <th scope="col" class="text-center">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,8 +18,8 @@
                     <th scope="row">{{i+1}}</th>
                     <td>{{restaurant.name}}</td>
                     <td>{{restaurant.address}}</td>
-                    <td><button>edit</button></td>
-                    <td><button>delete</button></td>
+                    <td class="action">edit</td>
+                    <td (click)='deleteRestaurant(restaurant.id)' class="action">delete</td>
                 </tr>
             </tbody>
         </table>
